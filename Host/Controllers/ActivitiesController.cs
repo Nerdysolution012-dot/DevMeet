@@ -8,14 +8,14 @@ namespace Host.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class ActivitiesController : ControllerBase
+public class ActivitiesController(AppDbContext _context) : ControllerBase
 {
-    private readonly AppDbContext _context;
-    public ActivitiesController(AppDbContext context)
-    {
-        _context = context; 
+    //private readonly AppDbContext _context;
+   //// public ActivitiesController()
+   // {
+   //     _context = context; 
 
-    }
+   // }
 
     [HttpGet]
     public async Task<ActionResult<List<Activity>>> GetActivities()
